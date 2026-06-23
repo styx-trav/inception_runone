@@ -1,0 +1,57 @@
+volumes:
+ wp_site:
+  name: wp_site
+  driver: local
+  driver_opts:
+   o: bind
+   type: none
+   device: "/home/naorakot/data/site"
+ 
+ wp_db:
+  name: wp_db
+  driver: local
+  driver_opts:
+   o: bind
+   type: none
+   device: "/home/naorakot/data/db"
+
+
+networks:
+ inception:
+
+services:
+ mariadb:
+  container_name: mariadb
+  env_file: .env
+  build: ./mariadb
+  volumes:
+   - wp_db:/var/lib/mysql
+  networks:
+   - inception
+  restart: unless-stopped
+
+ wordpress:
+  container_name: wordpress
+  depends_on:
+   - mariadb
+  env_file: .env
+  build: ./wordpress
+  volumes:
+   - wp_site:/var/www/html
+  networks:
+   - inception
+  restart: unless-stopped
+
+ nginx:
+  container_name: nginx
+  depends_on:
+   - wordpress
+  env_file: .env
+  build: ./nginx
+  volumes:
+   - wp_site:/var/www/html
+  networks:
+   - inception
+  ports:
+   - 443:443
+  restart: unless-stopped
