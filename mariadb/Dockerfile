@@ -16,7 +16,7 @@ COPY my.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 #allowing mysql acces on the run folders
 RUN mkdir -p /var/run/mysqld
 
-RUN chmod 770 /var/run/mysqls/
+RUN chmod 770 /var/run/mysqld/
 
 RUN chown -R mysql:mysql /var/run/mysqld/
 
