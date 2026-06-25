@@ -55,6 +55,8 @@ A Docker volume is a directory owned and managed by Docker to store a/multiple c
 
 For this project, two Docker volumes are used, each paired with a host directory. Docker manages these volumes, but their files are accessible through the host directory they are paired to. This way, container files persist across iterations, and are easily accessible through the host file management.
 
+The main difference for our use is that a volume mapped onto a host directory will use the files already present in it, where a bind-mount will only be able to ignore them.
+
 ## Instructions
 
 To compile and run this project, one needs :
@@ -63,7 +65,8 @@ To compile and run this project, one needs :
 - this repository, cloned onto their host machine.
 
 Once everything is on their machine, they should fill out the environment variables in env_vars.txt with credentials and names of their choosing, then rename the file ".env".
-(To use proper wordpress key, go to [link-text]https://api.wordpress.org/secret-key/1.1/salt/ and copy paste the keys in order ; less securely, any varied phrases will do.)
+
+_To use proper wordpress keys, go to_ [link-text]https://api.wordpress.org/secret-key/1.1/salt/ _and copy paste the keys in order ; less securely, any varied phrases will do._
 
 Now that everything is installed, open a terminal as root at the root of this repository, and run :
 > make up

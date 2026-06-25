@@ -62,7 +62,7 @@ To delete a volume, run :
 > docker volume rm volume_name
 
 
-_And now that we know how to make one, let's find out how to make many of them at once, with even more ease and effiency._
+_And now that we know how to make a container, let's find out how to make many of them at once, with even more ease and effiency._
 
 # Docker compose
 
