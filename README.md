@@ -62,9 +62,10 @@ The main difference for our use is that a volume mapped onto a host directory wi
 ## Instructions
 
 To compile and run this project, one needs :
-- docker (feel free to follow the installation recommended by the docker website [link-text]https://docs.docker.com/engine/install/);
-- root access, as docker requires it to function
-- this repository, cloned onto their host machine.
+- docker (feel free to follow the installation recommended by the docker website [link-text]https://docs.docker.com/engine/install/) ;
+- root access, as docker requires it to function ;
+- this repository, cloned onto their host machine ;
+- existing /home/naorakot/data/site and /home/naorakot/data/sql directories.
 
 Once everything is on their machine, they should fill out the environment variables in env_vars.txt with credentials and names of their choosing, then rename the file ".env".
 
