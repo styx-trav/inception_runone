@@ -42,4 +42,4 @@ EOF
 fi
 
 #run the mariadb server
-exec mysqld --user=msql
+exec mysqld --user=mysql

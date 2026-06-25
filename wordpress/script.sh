@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+DB_HOST=mariadb
 #waiting for the database to be available
 until mariadb -h"$DB_HOST" -u"$DB_USR" -p"$DB_PWD" "$DB_NAME" -e 'SELECT 1;' &>/dev/null; do
 	sleep 3
@@ -13,7 +15,7 @@ if [ ! -f "/var/www/html/wp-config.php" ]; then
 define( 'DB_NAME', '$DB_NAME' );
 define( 'DB_USER', '$DB_USR' );
 define( 'DB_PASSWORD', '$DB_PWD' );
-define( 'DB_HOST', 'mariadb' );
+define( 'DB_HOST', '$DB_HOST' );
 define( 'DB_CHARSET', 'utf8' );
 define( 'DB_COLLATE', 'utf8_generate_ci' );
 
@@ -48,4 +50,4 @@ require_once ABSPATH . 'wp-settings.php';
 fi
 
 #run the php-fpm (listening for nginx .php requests)
-php-fpm8.1 -f #--no-daemonize
+php-fpm8.2 -f #--no-daemonize
