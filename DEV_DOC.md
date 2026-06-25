@@ -159,14 +159,14 @@ This also means upon creation of the volume, if there were files in that directo
 
 # Secrets and Credentials
 
-For this project, I've chosen to keep all my environment variables in one file that all my containers have access to. Any and all of these variables are fine to change for any reason, but remember to reset from scratch for the changes to take effect, and keep in mind the servers do not re-configure once they have the files they require to function. Best to restart with a clean slate.
+For this project, I've chosen to keep all my environment variables in one file that all my containers have access to. Any and all of these variables are fine to change for any reason, but remember to reset everything from scratch for the changes to take effect, and keep in mind the servers do not re-configure once they have the files they require to function. Best to restart with a clean slate.
 
 To change this, simply amend in the docker-compose.yml, these lines :
 >services:
 > nginx:
 >  env_file: .env
 
-And add your own file there, with your own variables. Be careful to keep the names consistent with the files user by the container.
+Add your own file there, with your own variables. Be careful to keep the names consistent in the files that use them later on.
 
 ### Conclusion
 

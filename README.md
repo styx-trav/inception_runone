@@ -17,7 +17,7 @@ Finally, the project indicates a docker network must be created so all these con
 
 # VM v Docker
 
-First, what is Docker ? Docker is a process manager. It allows for the creation and use of containers with restrained, sterile environments - ideal for software development projects, and lightweight. Docker itself and every container it creates and runs exist on the host machine - it does not, like a virtual machine, run on its own OS as a separate entity.
+First, what is Docker ? Docker is a process manager. It allows for the creation and use of containers with restrained, clean environments - ideal for software development projects, and lightweight. Docker itself and every container it creates and runs exist on the host machine - it does not, like a virtual machine, run on its own OS as a separate entity.
 
 A VM is essentially a smaller computer installed on a bigger computer : less resources, same functioning. Docker is not. It runs on the host kernel and uses host resources - that is why it requires root access to work.
 
@@ -35,7 +35,7 @@ Environment variables, as the name indicates, are variables stored in the enviro
 
 Secrets are often - though not always - kept out of view as environment variables, and for good reason.
 
-Platforms like GitHub and Docker are very useful for collaborative work and project publishing, but they are things about a project that need to stay private. Keeping these things as environment variables and adding those files to a .git-ignore or .dockerignore list gives a developer the peace of mind to publish without fearing the misuse of their credentials.
+Platforms like GitHub and Docker are very useful for collaborative work and project publishing, but they are things about a project that need to stay private. Keeping these things as environment variables and adding those files to a .git-ignore or .docker-ignore list gives a developer the peace of mind to publish without fearing the misuse of their credentials.
 
 # Docker network v Host network
 

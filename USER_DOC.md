@@ -1,4 +1,4 @@
-_If you haven't read the Instructions section of the README.md, please read it first._
+_If you haven't read the Instructions section of the README.md, please read it before reading this file._
 
 ### User manual
 
