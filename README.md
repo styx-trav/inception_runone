@@ -21,7 +21,9 @@ First, what is Docker ? Docker is a process manager. It allows for the creation 
 
 A VM is essentially a smaller computer installed on a bigger computer : less resources, same functioning. Docker is not. It runs on the host kernel and uses host resources - that is why it requires root access to work.
 
-This makes Docker much, much faster than any virtual machine - but also far less secure. Despite being run in a docker container, malware can escape containment and has root permission to edit the files and processes necessary to the running of the host. A virtual machine will simply crash or malfunction, without disturbing the functioning of its host.
+This makes Docker much, much faster than any virtual machine - but also far less secure. Despite being run in a docker container, malware can escape containment and has root permission to edit the files and processes necessary to the running of the host. It is also incompatible with many firewalls, which makes the hosting machine more vulnerable.
+
+A virtual machine will simply crash or malfunction, without disturbing the functioning of its host.
 
 In conclusion, Docker is very efficient at running dependency-sensitive, safe processes. A virtual machine is slower, but significantly more separate from the host, and much safer for malware-prone testing. Both can be very useful as production environments, and in this project we use them in tandem - and reap every benefit.
 
@@ -60,7 +62,7 @@ The main difference for our use is that a volume mapped onto a host directory wi
 ## Instructions
 
 To compile and run this project, one needs :
-- docker (feel free to follow the installation recommended by the docker website [link here]);
+- docker (feel free to follow the installation recommended by the docker website [link-text]https://docs.docker.com/engine/install/);
 - root access, as docker requires it to function
 - this repository, cloned onto their host machine.
 
@@ -81,6 +83,13 @@ That's it ! While the containers are running, the website will be accessible for
 
 ## Resources
 
-//
+[link-text]https://docs.docker.com (for Docker documentation, installation, commands, syntax, etc.)
+[link-text]https://mariadb.com/docs/server/reference/sql-statements (for mariadb statement syntax)
+[link-text]https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://www.youtube.com/watch%3Fv%3DDQdB7wFEygo&ved=2ahUKEwjC1fPioqKVAxW1BfsDHR0FNLMQtwJ6BAgUEAI&usg=AOvVaw0WqCEcdZ2NrSmhR1L2WNRQ (to understand Docker itself)
+[link-text]https://github.com/malatini42/inception (for his elegant use of the wp commands to configure the wordpress blog, and the databse connexion checks)
+[link-text]https://blog.o2switch.fr/configurer-wp-config-php-wordpress/ (for the wordpress configuration file, and the wordpress key API link)
+[link-text]https://nginx.org/en/docs/http/configuring_https_servers.html (to properly configure the nginx ssl)
+[link-text]https://nginx.org/en/docs/beginners_guide.html (to properly configure nginx fastcgi for php)
+[link-text]https://github.com/wp-cli/wp-cli (to install the wp command and use it easily)
 
 AI was used twice to diagnose small issues with my mariadb installation.
