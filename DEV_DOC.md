@@ -23,7 +23,7 @@ Our Dockerfile consists of a few command words :
 The recipe for this project's Dockerfiles is simple : pull debian:bookworm, install the dependencies, create the directories, copy the configuration files where they need to go, copy the script to be run at container start, and run the script.
 
 To build an image on its own, you can run :
-> docker build ./path_to_the_dockerfile -t image_name:image_tag
+> docker build ./path-to-the-dockerfile -t image-name:image-tag
 
 To see a list of current images and their state, run :
 > docker images -a
@@ -107,7 +107,9 @@ The mariadb container is now running and operational. According to our docker-co
 
 # Wordpress
 
-In the wordpress container, we first install our php dependencies, mariadb (client), and a few download commands. We then download the wordpress files from the wordpress website and the wp-cli program from github. Once everything had been moved to its proper place (/var/www/html is the recommended directory for wordpress files) with the proper user permissions (www-data:www-data), we replace the php-fpm configuration file with our own so that the group [www] :
+In the wordpress container, we first install our php dependencies, mariadb (client), and a few download commands. We then download the wordpress files from the wordpress website and the wp-cli program from github. Once everything had been moved to its proper place (/var/www/html is the recommended directory for wordpress files) with the proper user permissions (www-data:www-data).
+
+We replace the php-fpm configuration file with our own so that the group [www] :
 - has user www-data from group www-data (I have not tried something else, but it seems possible, adjust permissions) ;
 - handles its processes dynamically with a maximum of 5 at once (all of these variables are subjective, except at least one server is necessary) ;
 - listens to 0.0.0.0:9000 (port subjective, dependent on the nginx fastcgi_pass).
@@ -148,8 +150,8 @@ Like mentioned before, volumes are Docker repositories, and not easily accessibl
 You'll notice, for example, this line :
 >volumes:
 > wp_site:
-> driver_opts:
->  device: "/home/naorakot/data/site"
+>  driver_opts:
+>   device: "/home/naorakot/data/site"
 
 This is how we establish the volume:host_directory pair. As such, all the files stored from a container into this volume can be found in that host directory. Like magic !
 
