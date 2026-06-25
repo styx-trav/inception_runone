@@ -1,4 +1,4 @@
-_This project..._
+_This project has been created as part of the 42 curriculum by naorakot._
 
 ### Inception
 
@@ -6,7 +6,7 @@ _This project..._
 
 This project introduces two main new concepts : docker, and database management.
 
-To learn and master these new concepts, we are required to create and run three docker containers, each hosting a piece of the process :
+To learn and master these new concepts, the goal is to create and run three docker containers, each hosting a piece of the process :
 - nginx : to run the server and make the wordpress website accessible through a browser;
 - wordpress and php : to install, store and process all wordpress .php files;
 - mariadb : to manage the wordpress database.
@@ -33,7 +33,7 @@ In conclusion, Docker is very efficient at running dependency-sensitive, safe pr
 
 Environment variables, as the name indicates, are variables stored in the environment of a project. This makes them easy to manipulate (one change instead of many), easy to use (no need to remember every 378 character long API key), and mostly, hidden. In other files, they appear only as their variable name, often named after their uses.
 
-Secrets are often - though not always - kept out of view as environment variables, and for good reason.
+Secrets are often - though not always - kept out of view as environment variables in "hidden" files or folders, and for good reason.
 
 Platforms like GitHub and Docker are very useful for collaborative work and project publishing, but they are things about a project that need to stay private. Keeping these things as environment variables and adding those files to a .git-ignore or .docker-ignore list gives a developer the peace of mind to publish without fearing the misuse of their credentials.
 
