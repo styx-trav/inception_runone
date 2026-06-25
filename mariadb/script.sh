@@ -21,10 +21,10 @@ EOF
 	MYOWNPID=$!
 
 	#waiting until the database is responsive
-	until mariadb -u root -p$DB_ROOT_PWD -e 'SELECT 1;' &>/dev/null; do sleep 3; done
+	until mariadb -u root -p$DB_ROOT_PWD -e 'SELECT 1;' &>/dev/null; do sleep 1; done
 
 	#create database
-	echo "CREATE DATABASE IF NOT EXISTS $DB_NAME CHARACTER SET uft8 COLLATE uft8_generate_ci;" | mariadb -u root -p$DB_ROOT_PWD
+	echo "CREATE DATABASE IF NOT EXISTS $DB_NAME CHARACTER SET uft8 COLLATE utf8_general_ci;" | mariadb -u root -p$DB_ROOT_PWD
 
 	#create user for wordpress use
 	echo "CREATE USER IF NOT EXISTS '$DB_USR'@'%' IDENTIFIED BY '$DB_PWD';" | mariadb -u root -p$DB_ROOT_PWD
@@ -36,7 +36,6 @@ EOF
 	echo "FLUSH PRIVILEGES;" | mariadb -u root -p$DB_ROOT_PWD
 	
 	#shutdown the current mariadb process for reset, then wait until its finished
-	
 	mysqladmin -u root -p$DB_ROOT_PWD shutdown
 	wait $MYOWNPID
 fi

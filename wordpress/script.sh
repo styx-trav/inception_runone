@@ -44,10 +44,10 @@ require_once ABSPATH . 'wp-settings.php';
 ?>" > wp-config.php
 	domain="naorakot.42.fr"
 	#core install :: all the basic info + admin account
-	wp core install --url=$domain --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_password=$WP_ADMIN_PASSWORD --admin_email=$WP_ADMIN_EMAIL --allow-root
+	wp core install --url=$domain --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_password=$WP_ADMIN_PWD --admin_email=$WP_ADMIN_EMAIL --allow-root
 	#adding non-admin user (author of this blog)
 	wp user create $WP_USER $WP_EMAIL --user_pass=$WP_PWD --role=author --allow-root
 fi
 
 #run the php-fpm (listening for nginx .php requests)
-php-fpm8.2 -f #--no-daemonize
+php-fpm8.2 -F #--no-daemonize

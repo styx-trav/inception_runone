@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 if [ ! -f "/var/lib/mysql/$DB_NAME/db.opt" ]; then
 	#first a start
 	service mariadb start

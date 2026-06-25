@@ -6,7 +6,8 @@ volumes:
    o: bind
    type: none
    device: "/home/styx/data/site"
-
+ 
+ 
  wp_db:
   name: wp_db
   driver: local
