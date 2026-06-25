@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 DB_HOST=mariadb
 #waiting for the database to be available
 until mariadb -h"$DB_HOST" -u"$DB_USR" -p"$DB_PWD" "$DB_NAME" -e 'SELECT 1;' &>/dev/null; do
@@ -17,7 +16,7 @@ define( 'DB_USER', '$DB_USR' );
 define( 'DB_PASSWORD', '$DB_PWD' );
 define( 'DB_HOST', '$DB_HOST' );
 define( 'DB_CHARSET', 'utf8' );
-define( 'DB_COLLATE', 'utf8_generate_ci' );
+define( 'DB_COLLATE', 'utf8_general_ci' );
 
 \$table_prefix = 'itspride_';
 

@@ -12,7 +12,7 @@ RUN mkdir -p /var/www/html
 
 
 #wp executable install, as recommended on the git
-RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phara/wp-cli.phar
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 
 RUN chmod +x wp-cli.phar
 
