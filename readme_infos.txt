@@ -62,3 +62,19 @@ more commands you might want to use ::
 	docker exec -it [container] bash -c '[cmds]' (run a/mult commands in a running container, for example to check everything is running well)
 
 where is data stored :: in docker-compose, the volumes have a driver_opts:device parameter, which stipulates where on the host machine the files from that volume are kept. the database volume is called wp_db, and the website volume is called wp_site. to see debug logs, check wp_site/wp-content/debug.log and wp_db/debug.log
+
+questionnaire sections ::
+touch (when where when-not what-kind)
+gifts (how-often how-expensive how-personal)
+
+steps to install the vm ::
+bookworm netinst iso ; 4096mb ; 4 CPUS ; 20Gb
+install docker from the site
+create a key and add it to the git account we want to pull from
+clone git repo
+add domain name to /etc/hosts
+create folders /data/site and /data/db
+fill out env vars and rename the file .env
+move to repo and docker compose up -d
+
+if the new attempt fails, try to run the og version. if this fails also, dig.
